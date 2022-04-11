@@ -6,6 +6,7 @@ import HookCounterTwo from './component/HookCounterTwo';
 import HookObject from './component/HookObject';
 import UseEffectHook from './component/UseEffectHook';
 import HookUseEffect2 from './component/HookUseEffect2';
+import DataFetching from './component/DataFetching';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       {/* <HookCounterTwo></HookCounterTwo> */}
       {/* <HookObject></HookObject> */}
       {/* <UseEffectHook></UseEffectHook> */}
-      <HookUseEffect2></HookUseEffect2>
+      {/* <HookUseEffect2></HookUseEffect2> */}
+      <DataFetching></DataFetching>
     </div>
   );
 }
