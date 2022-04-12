@@ -1,35 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Register = () => {
+
+    const [inpvalue,setINP] = useState({
+        name:"",
+        lastname:"",
+        mobile:"",
+        email:""
+    
+    })
+
+    const setdata = (e) =>{
+        console.log(e.target.value);
+        const {name,value} = e.target;
+        setINP((preval)=>{
+            return{
+                ...preval,
+                [name]:value
+            }
+        })
+    }
+
+
   return (
-    <div>
-      <form className="row g-3 needs-validation mt-5" novalidate>
+    <div className="container">
+
+    <NavLink to='/'><button className="btn btn-warning mt-4">Back To Home</button></NavLink>
+
+      <form className="row g-3 needs-validation mt-5" noValidate>
         <div className="col-md-4">
-          <label for="validationCustom01" className="form-label">
+          <label htmlFor="validationCustom01" className="form-label">
             First name
           </label>
           <input
             type="text"
             className="form-control"
             id="validationCustom01"
+            onChange={setdata}
+            name="name"
+            value={inpvalue.name}
             required
           />
           <div className="valid-feedback">Looks good!</div>
         </div>
         <div className="col-md-4">
-          <label for="validationCustom02" className="form-label">
+          <label htmlFor="validationCustom02" className="form-label">
             Last name
           </label>
           <input
             type="text"
             className="form-control"
             id="validationCustom02"
+            value={inpvalue.name}
             required
           />
           <div className="valid-feedback">Looks good!</div>
         </div>
         <div className="col-md-4">
-          <label for="validationCustomUsername" className="form-label">
+          <label htmlFor="validationCustomUsername" className="form-label">
             Mobile Number
           </label>
           <div className="input-group has-validation">
@@ -38,40 +67,42 @@ const Register = () => {
               className="form-control"
               id="validationCustomUsername"
               aria-describedby="inputGroupPrepend"
+              value={inpvalue.mobile}
               required
             />
             <div className="invalid-feedback">Please Enter Mobile Number.</div>
           </div>
         </div>
         <div className="col-md-6">
-          <label for="validationCustom03" className="form-label">
+          <label htmlFor="validationCustom03" className="form-label">
             Email
           </label>
           <input
             type="text"
             className="form-control"
             id="validationCustom03"
+            
             required
           />
           <div className="invalid-feedback">Please provide a valid Email.</div>
         </div>
         <div className="col-md-3">
-          <label for="validationCustom04" className="form-label">
+          <label htmlFor="validationCustom04" className="form-label">
             State
           </label>
           <select className="form-select" id="validationCustom04" required>
-            <option selected disabled value="">
+            <option>
               Choose...
             </option>
             <option>Maharashtra</option>
             <option>Gujarat</option>
-            <option>Karnatka</option>
+            <option>Karnataka</option>
             <option>Telengana</option>
           </select>
           <div className="invalid-feedback">Please select a valid state.</div>
         </div>
         <div className="col-md-3">
-          <label for="validationCustom05" className="form-label">
+          <label htmlFor="validationCustom05" className="form-label">
             Zip
           </label>
           <input
@@ -91,7 +122,7 @@ const Register = () => {
               id="invalidCheck"
               required
             />
-            <label className="form-check-label" for="invalidCheck">
+            <label className="form-check-label" htmlFor="invalidCheck">
               Agree to terms and conditions
             </label>
             <div className="invalid-feedback">

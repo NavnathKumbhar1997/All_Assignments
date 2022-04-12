@@ -1,13 +1,16 @@
 import React from "react";
+import Register from "./Register";
+import { NavLink } from "react-router-dom";
+
 
 const Home = () => {
   return (
     <>
       <div className="container mt-2">
         <div className="mt-5 add_button">
-          <button className="btn btn-primary">
+          <NavLink to='register'><button className="btn btn-primary">
           <i class="fa-solid fa-plus"></i> Add Data
-          </button>
+          </button></NavLink>
         </div>
       </div>
       <table className="mt-5 table">
