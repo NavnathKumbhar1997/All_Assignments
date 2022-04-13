@@ -5,7 +5,8 @@ import RegisterLogic from './RegisterLogic'
 const RegisterDesign = () => {
     let {
         inpvalue,
-        setData
+        setData,
+        AddUserData
     } = RegisterLogic()
 
   return (
@@ -111,7 +112,7 @@ const RegisterDesign = () => {
           </div>
         </div>
         <div className="col-12">
-          <button className="btn btn-primary" type="submit">
+          <button className="btn btn-primary" onClick={AddUserData} type="submit">
             Submit form
           </button>
         </div>

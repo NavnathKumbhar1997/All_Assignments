@@ -5,5 +5,5 @@ const DB = "mongodb+srv://crudeTest:WIy78IILrAytb5ln@cluster0.d5gxo.mongodb.net/
 mongoose.connect(DB,{
     useNewUrlParser:true,
     useUnifiedTopology:true
-}).then(()=>console.log("connection start")).catch((err)=>console.log(err.message));
+}).then(()=>console.log("connection succesfull")).catch((err)=>console.log(err.message));
 

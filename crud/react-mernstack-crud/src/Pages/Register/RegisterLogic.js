@@ -23,10 +23,14 @@ const RegisterLogic = () => {
             }
         })
     }
+    const AddUserData = ()=>{
+      console.log("dsfkjhdkjfsdjfkf");
+    }
 
   return {
     inpvalue,
-    setData
+    setData,
+    AddUserData
   }
 }
 
